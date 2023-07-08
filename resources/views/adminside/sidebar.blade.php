@@ -35,39 +35,27 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
                   <p>
-                    Daftar Wisata
+                    Daftar Produk
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="/budaya" class="nav-link">
+                    <a href="/pakaian" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Wisata Budaya</p>
+                      <p>Pakaian</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/kuliner" class="nav-link">
+                    <a href="/makanan" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Wisata Kuliner Khas</p>
+                      <p>Makanan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/rekreasi" class="nav-link">
+                    <a href="/alat" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Wisata Rekreasi</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/kekinian" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Wisata Kuliner kekinian</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/kerajinan" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Wisata Kerajinan Khas</p>
+                      <p>Alat</p>
                     </a>
                   </li>
                 </ul>
@@ -78,7 +66,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Review
+                Pesanan
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -86,31 +74,7 @@
               <li class="nav-item">
                 <a href="/reviewbudaya" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Review Budaya</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/reviewkuliner" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Review Kuliner Khas</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/reviewrekreasi" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Review Rekreasi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/reviewkekinian" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Review Kuliner kekinian</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/reviewkerajinan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Review Kerajinan Khas</p>
+                  <p>Pesanan</p>
                 </a>
               </li>
             </ul>

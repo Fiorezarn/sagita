@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->string('namabarang');
+            $table->integer('harga');
+            $table->integer('stock');
+            $table->string('kategori');
+            $table->string('gambar');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }

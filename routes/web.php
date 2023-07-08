@@ -18,7 +18,32 @@ Route::get('/', function () {
     return view('index');
 });
 
+//////////////////////////////////////////////////////////////////////////
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/pakaian', [AdminController::class, 'pakaian'])->name('pakaian');
+Route::get('/pakaian/detail/{id}',[AdminController::class,'detailpakaian'])->name('detailpakaian');
+Route::get('/pakaian/add',[AdminController::class,'addpakaian']);
+Route::post('/pakaian/insert',[AdminController::class,'insertpakaian']);
+Route::get('/pakaian/edit/{id}',[AdminController::class,'editpakaian']);
+Route::post('/pakaian/update/{id}',[AdminController::class,'updatepakaian']);
+Route::get('/pakaian/delete/{id}',[AdminController::class,'deletepakaian']);
+
+Route::get('/makanan', [AdminController::class, 'makanan'])->name('makanan');
+Route::get('/makanan/detail/{id}',[AdminController::class,'detailmakanan'])->name('detailmakanan');
+Route::get('/makanan/add',[AdminController::class,'addmakanan']);
+Route::post('/makanan/insert',[AdminController::class,'insertmakanan']);
+Route::get('/makanan/edit/{id}',[AdminController::class,'editmakanan']);
+Route::post('/makanan/update/{id}',[AdminController::class,'updatemakanan']);
+Route::get('/makanan/delete/{id}',[AdminController::class,'deletemakanan']);
+
+Route::get('/alat', [AdminController::class, 'alat'])->name('alat');
+Route::get('/alat/detail/{id}',[AdminController::class,'detailalat'])->name('detailalat');
+Route::get('/alat/add',[AdminController::class,'addalat']);
+Route::post('/alat/insert',[AdminController::class,'insertalat']);
+Route::get('/alat/edit/{id}',[AdminController::class,'editalat']);
+Route::post('/alat/update/{id}',[AdminController::class,'updatealat']);
+Route::get('/alat/delete/{id}',[AdminController::class,'deletealat']);
+//////////////////////////////////////////////////////////////////////////
 
 Auth::routes();
 
