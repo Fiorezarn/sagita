@@ -48,13 +48,16 @@ Route::get('/alat/delete/{id}',[AdminController::class,'deletealat']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/detailproduct', [HomeController::class, 'showproductdetail']);
-Route::get('/bayarproduct', [HomeController::class, 'bayarproduct']);
+Route::get('/detailproduct/{id}', [HomeController::class, 'showproductdetail'])->name('detailproduk');
+Route::get('/pembayaran/{id}', [HomeController::class, 'showpembayaranproduct']);
+Route::post('/pembayaranproduct', [HomeController::class, 'bayarproduct'])->name('bayarproduk');
+Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 

@@ -2,19 +2,19 @@
     <div class="mx-auto w-full max-w-screen-xl">
       <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Navigation</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class=" hover:underline">About</a>
+                    <a href="{{ url('/') }}#jumbotron" class="text-black hover:underline">Home</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Careers</a>
+                    <a href="{{ url('/') }}#product-content" class="text-black hover:underline">Product</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Brand Center</a>
+                    <a href="{{ url('/checkout') }}" class="text-black hover:underline">Checkout</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Blog</a>
+                    <a href="{{ url('/') }}#contact-us" class="text-black hover:underline">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -22,16 +22,16 @@
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Discord Server</a>
+                    <a href="#" class="text-black hover:underline">Email</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Twitter</a>
+                    <a href="#" class="text-black hover:underline">Whatsapp</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Facebook</a>
+                    <a href="#" class="text-black hover:underline">Facebook</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Contact Us</a>
+                    <a href="#" class="text-black hover:underline">Instagram</a>
                 </li>
             </ul>
         </div>
@@ -39,36 +39,36 @@
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a  class="text-black no-underline hover:underline">Privacy Policy</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Licensing</a>
+                    <a  class="text-black no-underline hover:underline">Licensing</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                    <a  class="text-black no-underline hover:underline">Terms &amp; Conditions</a>
                 </li>
             </ul>
         </div>
         <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Available</h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">iOS</a>
+                    <a class="text-black no-underline hover:underline">Shopee</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Android</a>
+                    <a class="text-black no-underline hover:underline">Tokopedia</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Windows</a>
+                    <a class="text-black no-underline hover:underline">Blibli</a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="hover:underline">MacOS</a>
+                    <a class="text-black no-underline hover:underline">Lazada</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="{{ url('/') }}" class="text-red-950 no-underline">Sagita</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 space-x-5 sm:justify-center md:mt-0">
             <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">

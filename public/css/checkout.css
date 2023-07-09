@@ -1,0 +1,18 @@
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.checkout{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 150px;
+}
+.tabel-checkout{
+    box-shadow: 0px 0px 10px rgb(101, 1, 1);
+    border-radius: 15px;
+}
