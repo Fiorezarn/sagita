@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function showproductdetail(){
+        return view('detailproduct');
+    }
+    
+    public function bayarproduct(){
+        return view('bayarproduct');
+    }
 }
