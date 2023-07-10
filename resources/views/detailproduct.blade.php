@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Detail Product')
 @section('css', '/css/detailproduct.css')
 @section('content')
 

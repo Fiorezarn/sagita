@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Sagita')
 @section('css', '/css/home.css')
 @section('content')
 <a href="#" class="btn btn-lg btn-lg-square rounded-circle back-to-top"><i class="fas fa-arrow-circle-up fa-3x" style="color: #8d0202;"></i></i></a>

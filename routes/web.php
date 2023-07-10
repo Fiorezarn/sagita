@@ -15,10 +15,11 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// ********************* Fitur Admin **********************
+Route::group(['middleware' => ['Auth', 'Status']], function () {
 //////////////////////////////////////////////////////////////////////////
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/pakaian', [AdminController::class, 'pakaian'])->name('pakaian');
@@ -45,16 +46,13 @@ Route::get('/alat/edit/{id}',[AdminController::class,'editalat']);
 Route::post('/alat/update/{id}',[AdminController::class,'updatealat']);
 Route::get('/alat/delete/{id}',[AdminController::class,'deletealat']);
 //////////////////////////////////////////////////////////////////////////
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
-
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
 
 Route::get('/detailproduct/{id}', [HomeController::class, 'showproductdetail'])->name('detailproduk');
 Route::get('/pembayaran/{id}', [HomeController::class, 'showpembayaranproduct']);

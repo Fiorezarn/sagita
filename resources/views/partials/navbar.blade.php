@@ -27,7 +27,7 @@
           <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
-         @if (Auth::user()->level == 1)
+         @if (Auth::user()->status == 1)
                     <a href="/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
                     @endif
                     <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sign out</a>

@@ -15,7 +15,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
         $this->product = new Admin();
         $this->order = new Order();
 

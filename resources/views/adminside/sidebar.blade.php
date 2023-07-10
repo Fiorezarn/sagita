@@ -23,7 +23,7 @@
                with font-awesome or any other icon font library -->
               </li>
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">
+                <a href="/admin" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                   Dashboard
@@ -93,12 +93,6 @@
                 <a href="/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/about" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>About</p>
                 </a>
               </li>
             </ul>
