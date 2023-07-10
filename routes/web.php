@@ -46,6 +46,10 @@ Route::get('/alat/edit/{id}',[AdminController::class,'editalat']);
 Route::post('/alat/update/{id}',[AdminController::class,'updatealat']);
 Route::get('/alat/delete/{id}',[AdminController::class,'deletealat']);
 //////////////////////////////////////////////////////////////////////////
+Route::get('/pesanan',[AdminController::class,'showorder'])->name('daftarpesanan');
+Route::get('/pesanan/detail/{id}',[AdminController::class,'detailorder']);
+Route::get('/pesanan/delete/{id}',[AdminController::class,'deletepesanan']);
+Route::patch('/updatestatus/{id}', [AdminController::class, 'updatestatus'])->name('updatestatus');
 });
 
 Auth::routes();

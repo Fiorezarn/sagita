@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Order;
 
 class AdminController extends Controller
 {
     public function __construct() {
         $this->Admin = new Admin();
+        $this->Order = new Order();
     }
     public function index ()
     {
@@ -399,16 +401,66 @@ public function updatealat($id)
         $this->Admin->editData($id, $data);
     }
     return redirect()->route('alat')->with('pesan','Data Berhasil Di Update !!');
-}
-public function deletealat($id)
-{
-    //hapus foto
-    $alat = $this->Admin->detailData($id);
-    if ($alat->gambar <> "") {
-        unlink(public_path('foto_produk') . '/' . $alat->gambar);
-    }   
-    $this->Admin->deleteData($id);
-    return redirect()->route('alat')->with('pesan','Data Berhasil Di Hapus !!');
+    }
+    public function deletealat($id)
+    {
+        //hapus foto
+        $alat = $this->Admin->detailData($id);
+        if ($alat->gambar <> "") {
+            unlink(public_path('foto_produk') . '/' . $alat->gambar);
+        }   
+        $this->Admin->deleteData($id);
+        return redirect()->route('alat')->with('pesan','Data Berhasil Di Hapus !!');
 
-}
+    }
+
+/////////////////////////////////////////////////Order//////////////////////////////
+
+    public function showorder()
+    {
+        $data = [
+            'order' => $this->Order->allData(),
+            'totalpesanan' => $this->Order->allData()->count(),
+        ];
+        return view('adminside.pesanan', $data);
+    }
+
+    public function detailorder($id)
+    {
+        if (!$this->Order->detailDataOrder($id)) {
+            abort(404);
+        }
+    
+        $data = [
+            'order' => $this->Order->detailDataOrder($id),
+        ];
+    
+        return view('adminside.detailpesanan', $data);
+    }
+    
+
+    public function deletepesanan($id)
+    {
+        // hapus foto
+        $order=$this ->Order->detailDataOrder($id);
+        if($order -> buktipembayaran <>""){
+            unlink(public_path('buktipembayaran').'/'.$order -> buktipembayaran);
+        }
+        $this->Order->deleteDataOrder($id);
+        return redirect()->route('daftarpesanan')->with('pesan', 'Data berhasil di hapus');
+    }
+
+    public function updatestatus($id)
+    {
+        $validated = Request()->validate([
+            "status_pembayaran" => "required|in:Menunggu Pembayaran,Pembayaran Diterima,Pembayaran Ditolak",
+        ]);
+
+        $order = Order::find($id);
+        $order->status_pembayaran = Request()->status_pembayaran;
+        $order->save();
+
+        return back()->with("pesan", "Status berhasil diperbarui");
+    }
+
 }
