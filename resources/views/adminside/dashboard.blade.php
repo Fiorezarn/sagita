@@ -35,7 +35,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>14</h3>
+                                <h3>{{$totalorder}}</h3>
                                 <p>New Orders</p>
                             </div>
                             <div class="icon">
@@ -49,7 +49,7 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>14</h3>
+                                <h3>{{$totalproduct}}</h3>
                                 <p>Total Product</p>
                             </div>
                             <div class="icon">
@@ -63,7 +63,7 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>15</h3>
+                                <h3>{{$user}}</h3>
                                 <p>User Registrations</p>
                             </div>
                             <div class="icon">
@@ -77,7 +77,7 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3>{{$admin}}</h3>
                                 <p>Role Admin</p>
                             </div>
                             <div class="icon">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Order;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,17 @@ class AdminController extends Controller
     }
     public function index ()
     {
-        return view ('adminside.dashboard');
+        $totalorder = Order::count();
+        $user = User::where('status','1')->count();
+        $admin = User::where('status','0')->count();
+        $totalproduct = Admin::count();
+
+        return view ('adminside.dashboard', [
+            'totalproduct' => $totalproduct,
+            'totalorder' => $totalorder,
+            'admin' => $admin,
+            'user' => $user,
+        ]);
     }
 
     public function pakaian ()
