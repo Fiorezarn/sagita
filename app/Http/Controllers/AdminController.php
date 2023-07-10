@@ -464,7 +464,7 @@ public function updatealat($id)
     public function updatestatus($id)
     {
         $validated = Request()->validate([
-            "status_pembayaran" => "required|in:Menunggu Pembayaran,Pembayaran Diterima,Pembayaran Ditolak",
+            "status_pembayaran" => "required|in:Menunggu Konfirmasi,Pembayaran Diterima,Pembayaran Ditolak",
         ]);
 
         $order = Order::find($id);

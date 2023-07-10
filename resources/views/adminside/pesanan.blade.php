@@ -66,7 +66,34 @@
               <td>{{ $item->nama_rekening }}</td>
               <td>{{ $item->alamat }}</td>
               <td><img src="{{ url('buktipembayaran/' . $item->buktipembayaran) }}" width="100px"></td>
-              <td>{{ $item->status_pembayaran }}</td>
+              <td>
+                <div class="btn-group">
+                    <button type="button" class="btn
+                      @if ($item->status_pembayaran == 'Menunggu Konfirmasi') btn-warning
+                      @elseif ($item->status_pembayaran == 'Pembayaran Diterima') btn-success
+                      @elseif ($item->status_pembayaran == 'Pembayaran Ditolak') btn-danger
+                      @endif
+                      btn-sm dropdown-toggle py-0 px-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      @if ($item->status_pembayaran == 'Menunggu Konfirmasi')
+                      Menunggu Konfirmasi
+                      @elseif ($item->status_pembayaran == 'Pembayaran Diterima')
+                      Pembayaran Diterima
+                      @elseif ($item->status_pembayaran == 'Pembayaran Ditolak')
+                      Pembayaran Ditolak
+                      @endif
+                    </button>
+                    
+                    <div class="dropdown-menu">
+                      <form action="{{ route('updatestatus', $item->id) }}" method="POST" enctype="multipart/form-data">
+                        @method('PATCH')
+                        @csrf
+                        <button type="submit" name="status_pembayaran" value="Menunggu Konfirmasi" class="dropdown-item btn btn-warning">Menunggu Pembayaran</button>
+                        <button type="submit" name="status_pembayaran" value="Pembayaran Diterima" class="dropdown-item btn btn-success">Pembayaran Diterima</button>
+                        <button type="submit" name="status_pembayaran" value="Pembayaran Ditolak" class="dropdown-item btn btn-danger">Pembayaran Ditolak</button>
+                      </form>
+                    </div>
+                  </div>
+              </td>
               <td>
                 <a href="/pesanan/detail/{{ $item->id }}" class="btn btn-sm btn-success">Detail</a>
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $item->id}}">
