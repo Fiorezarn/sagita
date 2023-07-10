@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\EmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,4 +62,7 @@ Route::get('/detailproduct/{id}', [HomeController::class, 'showproductdetail'])-
 Route::get('/pembayaran/{id}', [HomeController::class, 'showpembayaranproduct']);
 Route::post('/pembayaranproduct', [HomeController::class, 'bayarproduct'])->name('bayarproduk');
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+
+Route::post('/contact', [EmailController::class, 'sendEmail'])->name('contact.send');
+
 

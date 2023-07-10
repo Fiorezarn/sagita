@@ -26,8 +26,10 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="display-5 mb-4">Sagita Store</h5>
-                    <p class="mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde, animi illum et quam dolor molestiae asperiores possimus nisi, temporibus modi repellendus praesentium placeat corporis accusamus ut? Provident, et est.</p>
+                    <h5 class="display-5 mb-4 mt-10">Sagita Store</h5>
+                    <p class="mb-4 text-justify">
+                        Sagita adalah website e-commerce yang menyediakan pakaian, alat-alat, dan makanan berkualitas tinggi dengan gaya yang modis dan harga kompetitif. Sagita memanjakan pelanggan dengan berbagai pilihan produk yang dipilih dengan hati-hati dari produsen terpercaya. Pengalaman belanja yang menyenangkan dan pelayanan pelanggan yang responsif menjadi fokus utama Sagita dalam memberikan kepuasan kepada setiap pelanggan.
+                    </p>
                     <p><i class="fa fa-check text-primary me-3"></i>Barang Berkualitas</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Harga Terjangkau</p>
                     <p><i class="fa fa-check text-primary me-3"></i>Terpercaya</p>
@@ -45,19 +47,19 @@
                 <div class="col-lg-6">
                     <div class="section-header text-white text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                         <h1 class="display-5 mb-3 ">Our Products</h1>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi sit libero corporis accusamus ut,</p>
+                        <p>Temukan barang berkualitas anda disini. Anda juga dapat memilih berdasarkan kategori yang telah disediakan seperti pakaian, makanan dan alat-alat</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                         <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Barang 1</a>
+                            <a id="pakaianBtn" class="btn btn-outline-primary border-2 active" data-bs-toggle="pill">Pakaian</a>
                         </li>
                         <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Barang 2</a>
+                            <a id="makananBtn" class="btn btn-outline-primary border-2" data-bs-toggle="pill">Makanan</a>
                         </li>
                         <li class="nav-item me-0">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Barang 3</a>
+                            <a id="alatBtn"  class="btn btn-outline-primary border-2" data-bs-toggle="pill">Alat-Alat</a>
                         </li>
                     </ul>
                 </div>
@@ -70,7 +72,7 @@
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mx-24" id="productGrid">
         @foreach ($admin as $product)
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 item">
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 item" data-category="{{ $product->kategori }}">
             <img class="rounded-t-lg" src="{{ url('foto_produk/' . $product->gambar) }}" alt="" />
 
             <div class="p-5">
@@ -99,45 +101,54 @@
                 <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-red-900	 text-white d-flex flex-column justify-content-center h-100 p-5">
                         <h5 class="text-white">Call Us</h5>
-                        <p class="mb-5"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-5"><i class="fa fa-phone-alt me-3"></i>+62 852-2091-4299</p>
                         <h5 class="text-white">Email Us</h5>
                         <p class="mb-5"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                         <h5 class="text-white">Office Address</h5>
                         <p class="mb-5"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                         <h5 class="text-white">Follow Us</h5>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fa-brands fa-instagram"></i></a>
                             <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square btn-outline-light rounded-circle me-0" href="https://api.whatsapp.com/send?phone=6285220914299&text=Hallo%2C%20saya%20ingin%20mengetahui%20layanan%20anda%2C%20bisa%20tolong%20dijelaskan%20lebih%20detail%3F" target="_blank"><i class="fa-brands fa-whatsapp"></i></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias cupiditate iusto iure repellendus, assumenda aut architecto voluptatibus fugiat eligendi quibusdam! Voluptatum sapiente aliquid qui magnam eum? Laboriosam quo perspiciatis impedit..</p>
-                    <form>
+                    <p class="mb-4 text-justify">
+                    <span class="text-red-700">Sagita</span> menghargai hubungan dengan pelanggan kami dan selalu siap membantu. Jika Anda memiliki pertanyaan, masukan, atau butuh bantuan, jangan ragu untuk menghubungi kami melalui layanan Contact Us kami. Tim kami yang ramah dan responsif siap menjawab setiap permintaan Anda dengan segera. Kami berkomitmen untuk memberikan pengalaman pelanggan yang luar biasa dan memastikan kepuasan Anda adalah prioritas utama kami.
+                    </p>
+                    
+                    @if(Session::has('message_sent'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('message_sent') }}
+                    </div>
+                    @endif
+                    <form action="{{ route('contact.send') }}" method="post" role="form" enctype="multipart/form-data" id="contact-form">
+                    @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 200px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
@@ -153,7 +164,7 @@
 
 
     <div class="container-xxl px-0 wow fadeIn flex justify-center" data-wow-delay="0.1s" style="margin-bottom: -6px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7932.481372455454!2d106.615909!3d-6.231969!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fc1acf84837d%3A0x6642a0008730b471!2sUniversitas%20Gunadarma%20Kampus%20K!5e0!3m2!1sid!2sid!4v1688889566599!5m2!1sid!2sid" width="1200" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3964.8205400216066!2d106.71591131477011!3d-6.417099995357075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjUnMDEuNiJTIDEwNsKwNDMnMDUuMiJF!5e0!3m2!1sid!2sid!4v1688997359355!5m2!1sid!2sid" width="1200" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
 
@@ -169,6 +180,52 @@
             const productName = product.querySelector('.namabarang').textContent.toLowerCase();
 
             if (productName.includes(searchTerm)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+
+    // Fungsi untuk memfilter produk berdasarkan kategori yang dipilih
+    function filterProducts(category) {
+        products.forEach((product) => {
+            const productCategory = product.getAttribute('data-category');
+
+            if (productCategory === category || category === 'all') {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    // Tambahkan event listener pada setiap tombol kategori
+    const pakaianBtn = document.getElementById('pakaianBtn');
+    pakaianBtn.addEventListener('click', () => {
+        filterProducts('pakaian');
+    });
+
+    const makananBtn = document.getElementById('makananBtn');
+    makananBtn.addEventListener('click', () => {
+        filterProducts('makanan');
+    });
+
+    const alatBtn = document.getElementById('alatBtn');
+    alatBtn.addEventListener('click', () => {
+        filterProducts('alat-alat');
+    });
+
+    // Event listener untuk input pencarian
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const selectedCategory = document.querySelector('.nav-pills .active').getAttribute('data-category');
+
+        products.forEach((product) => {
+            const productName = product.querySelector('.namabarang').textContent.toLowerCase();
+            const productCategory = product.getAttribute('data-category');
+
+            if ((productName.includes(searchTerm) || searchTerm === '') && (productCategory === selectedCategory || selectedCategory === 'all')) {
                 product.style.display = 'block';
             } else {
                 product.style.display = 'none';
