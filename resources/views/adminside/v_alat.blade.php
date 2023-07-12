@@ -85,7 +85,7 @@
                   </div>
                   <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Tidak</button>
-                    <a href="/budaya/delete/{{ $item->id }}" class="btn btn-outline-light">Iya</a>
+                    <a href="/alat/delete/{{ $item->id }}" class="btn btn-outline-light">Iya</a>
                   </div>
                 </div>
                 <!-- /.modal-content -->
