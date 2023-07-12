@@ -173,20 +173,8 @@
     const productGrid = document.getElementById('productGrid');
     const products = Array.from(productGrid.getElementsByClassName('item'));
 
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
 
-        products.forEach((product) => {
-            const productName = product.querySelector('.namabarang').textContent.toLowerCase();
-
-            if (productName.includes(searchTerm)) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    });
-
+    
     // Fungsi untuk memfilter produk berdasarkan kategori yang dipilih
     function filterProducts(category) {
         products.forEach((product) => {
@@ -232,6 +220,21 @@
             }
         });
     });
+    
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+
+        products.forEach((product) => {
+            const productName = product.querySelector('.namabarang').textContent.toLowerCase();
+
+            if (productName.includes(searchTerm)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+
 </script>
 
 @endsection

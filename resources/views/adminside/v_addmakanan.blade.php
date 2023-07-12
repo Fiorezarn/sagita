@@ -82,7 +82,7 @@
 
                                     <div class="form-group">
                                         <label for="">Kategori</label>
-                                        <input name="kategori" class="form-control" value="{{ old('kategori') }}">
+                                        <input name="kategori" class="form-control" value="makanan">
                                         <div class="text-danger">
                                             @error('kategori')
                                                 {{ $message }}
